@@ -24,6 +24,6 @@ Sample Output
 
 .. code-block:: console
 
-    Hello World! x86
+    Accelerometer data
 
 Exit QEMU by pressing :kbd:`CTRL+A` :kbd:`x`.
