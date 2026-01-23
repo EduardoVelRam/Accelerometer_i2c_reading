@@ -1,13 +1,11 @@
-.. _hello_world:
 
-Hello World
+LSM6DSV data reading via i2c
 ###########
 
 Overview
 ********
 
-A simple sample that can be used with any :ref:`supported board <boards>` and
-prints "Hello World" to the console.
+A project that reads accelerometer data using i2c communication protocol. Gyroscope and axis accelerometer is used.
 
 Building and Running
 ********************
@@ -15,10 +13,8 @@ Building and Running
 This application can be built and executed on QEMU as follows:
 
 .. zephyr-app-commands::
-   :zephyr-app: samples/hello_world
    :host-os: unix
    :board: qemu_x86
-   :goals: run
    :compact:
 
 To build for another board, change "qemu_x86" above to that board's name.
