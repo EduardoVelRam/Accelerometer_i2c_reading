@@ -1,0 +1,35 @@
+// To get started, press Ctrl+Space to bring up the completion menu and view the available nodes.
+
+// You can also use the buttons in the sidebar to perform actions on nodes.
+// Actions currently available include:
+
+// * Enabling / disabling the node
+// * Adding the bus to a bus
+// * Removing the node
+// * Connecting ADC channels
+
+// For more help, browse the DeviceTree documentation at https://docs.zephyrproject.org/latest/guides/dts/index.html
+// You can also visit the nRF DeviceTree extension documentation at https://docs.nordicsemi.com/bundle/nrf-connect-vscode/page/guides/ncs_configure_app.html#devicetree-support-in-the-extension
+
+// Consultar: https://docs.zephyrproject.org/latest/build/dts/api/bindings/sensor/st%2Clsm6dsv16x-i2c.html
+&i2c0 {
+    status = "okay";
+    lsmdsvx: lsmdsvx@6A {  // 6A, D4, D5, D7, 0F, 70, 15, 35, 6B, 1A
+        compatible = "st,lsm6dsv16x";
+        reg = <0x6A>; 
+        label = "lsmdsvx";
+        // Propiedades para el sensor
+        //irq-gpios = <&gpio0 2 GPIO_ACTIVE_HIGH>; // pin GPIO usado para las interrupciones DRDY
+        //drdy-pin = <1>; // pin INT1 para la señal DRDY
+        //accel-range = <1>; //  rango del acelerómetro UTIL
+        //accel-odr = <0x01>; // frecuencia de muestreo del acelerómetro UTIL
+        //gyro-range = <1>; // rango del giroscopio UTIL
+        //gyro-odr = <0x02>; // frecuencia de muestreo del giroscopio UTIL
+        //drdy-pulsed; // modo de pulso para la señal DRDY
+    };
+    /*sensor: sensor@4a{
+        compatible = "i2c-device";
+        status = "okay";
+        reg = < 0x4a >;
+    };*/
+};
