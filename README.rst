@@ -18,8 +18,6 @@ The sensor supports standard and fast I2C speeds, making it suitable for both pe
 
 Overall, the combination of precise inertial sensing, embedded processing capabilities, and a flexible, widely supported I2C interface makes the LSM6DSV16X a reliable and efficient solution for modern motion-sensing applications.
 
-To build for another board, change "qemu_x86" above to that board's name.
-
 Sample Output
 =============
 
