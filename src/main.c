@@ -1,5 +1,5 @@
 
-// Código de lectura de temperatura del sensor LSM6DSV16X
+// LSM6DSV16X date lecture code
 
 
 #include <zephyr/types.h>
@@ -12,9 +12,7 @@
 #include <zephyr/drivers/sensor.h>
 #include <zephyr/drivers/gpio.h>
 
-// VERSION SIN DRIVER
-
-// DEFINICIONES
+// NO DRIVER VERSION
 
 // I2C Device Address 8 bit format  if SA0=0 -> D5 if SA0=1 -> D7 
 #define LSM6DSV16X_I2C_ADD_L    0xD5U
@@ -37,19 +35,19 @@
 #define CONF_CTRL_GYR			0x52
 
 
-// Operación
+// Operation
 
 #define I2C_NODE DT_NODELABEL(i2c0)
 static const struct device *i2c_dev = DEVICE_DT_GET(I2C_NODE);
 
 
 static uint8_t i2c_buffer[2];  
-static uint8_t i2c_write_buffer[4]; // buffer para escrituras
-static uint8_t i2c_read_buffer[2];  // buffer para lecturas
+static uint8_t i2c_write_buffer[4]; // writting buffer 
+static uint8_t i2c_read_buffer[2];  // lectures buffer 
 static uint8_t i2c_read_buffer2[2]; 
 static uint8_t i2c_read_buffer3[2]; 
 
-int main(void) // void
+int main(void) 
 {
 	int err;
 
